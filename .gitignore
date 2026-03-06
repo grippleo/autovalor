@@ -1,0 +1,7 @@
+*.joblib
+__pycache__/
+*.pyc
+.pytest_cache/
+*.png
+
+Docker Desktop Installer.exe

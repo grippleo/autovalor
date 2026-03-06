@@ -1,0 +1,25 @@
+# ============================================================
+# docker-compose.yml — Orquestração do AutoValor
+# ============================================================
+# O docker-compose define como os serviços se conectam.
+# Neste caso temos apenas um serviço (a API), mas em projetos
+# maiores você teria banco de dados, cache, etc.
+#
+# Para subir:   docker compose up
+# Para derrubar: docker compose down
+
+services:
+  api:
+    build: .                    # Construir a imagem a partir do Dockerfile
+    container_name: autovalor-api
+    ports:
+      - "8000:8000"             # Mapear porta 8000 do host para o container
+    volumes:
+      - modelo_data:/app/app    # Volume persistente para o modelo
+    environment:
+      - PYTHONUNBUFFERED=1      # Mostrar logs em tempo real
+    restart: unless-stopped      # Reiniciar se o container cair
+
+volumes:
+  modelo_data:
+    driver: local               # Volume local para persistir o modelo

@@ -1,0 +1,17 @@
+# === Dependências do projeto AutoValor ===
+# Cada linha é um "reagente" necessário para o projeto funcionar
+
+# --- API ---
+fastapi==0.115.0        # Framework web para criar a API REST
+uvicorn==0.30.0         # Servidor que "roda" a API (como o forno do GC)
+pydantic==2.9.0         # Validação dos dados de entrada (controle de qualidade dos inputs)
+
+# --- Machine Learning ---
+scikit-learn==1.5.2     # Biblioteca de ML (onde mora o Random Forest)
+joblib==1.4.2           # Para carregar o modelo salvo (.joblib)
+numpy==1.26.4           # Operações numéricas
+pandas==2.2.3           # Manipulação de dados
+
+# --- Testes ---
+pytest==8.3.3           # Framework de testes automatizados
+httpx==0.27.2           # Cliente HTTP para testar a API
